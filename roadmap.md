@@ -1,6 +1,6 @@
 # Portfolio roadmap
 
-- [ ] Build all requested single-page sections and interactions
-- [ ] Wire real profile photo and CV downloads
-- [ ] Verify desktop, mobile, navigation, links, and contact fallback
-- [ ] Confirm preview build health and metadata
+- [x] Build all requested single-page sections and interactions
+- [x] Wire real profile photo and CV downloads
+- [x] Verify desktop, mobile, navigation, links, and contact fallback
+- [x] Confirm preview build health and metadata
