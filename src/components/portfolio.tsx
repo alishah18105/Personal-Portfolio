@@ -84,7 +84,7 @@ export function Navbar() {
 function SectionHeading({ eyebrow, title, description }: { eyebrow: string; title: string; description?: string }) {
   return (
     <div className="section-heading reveal">
-      <p className="eyebrow"><span aria-hidden="true">//</span> {eyebrow}</p>
+      <p className="eyebrow">{eyebrow.trim() && <><span aria-hidden="true">//</span> </>}{eyebrow}</p>
       <h2>{title}</h2>
       {description && <p>{description}</p>}
     </div>
