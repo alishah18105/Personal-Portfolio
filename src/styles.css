@@ -189,7 +189,7 @@
   .button-secondary:hover { border-color: color-mix(in oklab, var(--cyan) 55%, transparent); }
   .button-quiet { color: var(--muted-foreground); padding-inline: 8px; }
   .button-quiet:hover { color: var(--cyan); }
-  .hero { min-height: 100svh; position: relative; display: grid; place-items: center; padding: 130px 0 74px; overflow: hidden; }
+  .hero { min-height: min(900px, 100svh); position: relative; display: grid; place-items: center; padding: 130px 0 74px; overflow: hidden; }
   .hero::before { content: ""; position: absolute; inset: 0; pointer-events: none; background-image: linear-gradient(color-mix(in oklab, var(--border) 24%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in oklab, var(--border) 24%, transparent) 1px, transparent 1px); background-size: 64px 64px; mask-image: linear-gradient(to bottom, black, transparent 78%); }
   .hero-grid { position: relative; width: min(1180px, calc(100% - 40px)); margin-inline: auto; display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(360px, .88fr); align-items: center; gap: 80px; }
   .status { width: fit-content; display: flex; align-items: center; gap: 9px; margin: 0 0 26px; padding: 8px 12px; border: 1px solid color-mix(in oklab, var(--success) 28%, transparent); border-radius: 999px; color: var(--muted-foreground); background: color-mix(in oklab, var(--success) 5%, transparent); font-size: 12px; font-weight: 650; }
