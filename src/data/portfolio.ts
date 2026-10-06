@@ -69,7 +69,7 @@ export const featuredProjects: Project[] = [
     technologies: ["Flask", "React", "Vite", "Tailwind CSS", "Recharts"],
     github: "https://github.com/alishah18105/Cloud-Load-Balancing-Simulator",
     live: "https://cloud-load-balancing-simulator.vercel.app/",
-    label: "Distributed systems",
+    label: "DESIGN & ANALYSIS OF ALGORITHMS",
     variant: "systems",
   },
   {
@@ -77,7 +77,7 @@ export const featuredProjects: Project[] = [
     description: "A desktop-based healthcare assistant combining a machine-learning chatbot, CBC report analysis, and database-backed functionality.",
     technologies: ["Python", "PyQt6", "Flask", "PostgreSQL", "Machine Learning", "TF-IDF", "Logistic Regression"],
     github: "https://github.com/alishah18105/AI_Health_System_Project",
-    label: "Applied machine learning",
+    label: "AI/ML",
     variant: "health",
   },
   {
@@ -85,16 +85,16 @@ export const featuredProjects: Project[] = [
     description: "A statistical process control project analyzing manufacturing measurements to evaluate process stability and process capability.",
     technologies: ["Python", "Pandas", "NumPy", "Matplotlib", "X-bar Charts", "R Charts", "Cp/Cpk Analysis", "Western Electric Rules"],
     github: "https://github.com/alishah18105/Manufacturing-SPC-Analysis",
-    label: "Statistical analysis",
+    label: "SOFTWARE QUALITY & TESTING",
     variant: "data",
   },
 ];
 
 export const otherProjects: Project[] = [
-  { title: "Meeting Management System", description: "A web-based meeting management system designed to organize and manage meeting-related information using a Flask backend and PostgreSQL database.", technologies: ["Flask", "PostgreSQL", "Bootstrap"], github: "https://github.com/alishah18105/Meeting_Management_System", label: "Web application", variant: "web" },
+  { title: "Meeting Management System", description: "A web-based meeting management system designed to organize and manage meeting-related information using a Flask backend and PostgreSQL database.", technologies: ["Flask", "PostgreSQL", "Bootstrap"], github: "https://github.com/alishah18105/Meeting_Management_System", label: "DATABASE MANAGEMENT SYSTEM", variant: "web" },
   { title: "Progresso", description: "A mobile task-management application designed to help users organize and track daily tasks through a clean mobile interface.", technologies: ["Flutter", "Dart"], github: "https://github.com/alishah18105/Progresso-App", label: "Mobile application", variant: "mobile" },
   { title: "Flutter Product Catalog Manager", description: "A Flutter-based product catalog application developed as a practical mobile development project.", technologies: ["Flutter", "Dart"], github: "https://github.com/alishah18105/Flutter-Assignment-Product-Catalog-Manager", label: "Mobile application", variant: "mobile" },
-  { title: "Sudoku Game", description: "A desktop Sudoku game developed with Java and JavaFX, focusing on interactive gameplay and application development.", technologies: ["Java", "JavaFX"], github: "https://github.com/alishah18105/Sudoku-Game", label: "Desktop application", variant: "desktop" },
+  { title: "Sudoku Game", description: "A desktop Sudoku game developed with Java and JavaFX, focusing on interactive gameplay and application development.", technologies: ["Java", "JavaFX"], github: "https://github.com/alishah18105/Sudoku-Game", label: "DESIGN & STRUCTURE OF ALGORITHMS", variant: "desktop" },
   { title: "LeetCode Solutions", description: "A collection of programming problem solutions covering algorithmic thinking, data structures, and problem-solving practice.", technologies: ["Python", "Algorithms", "Data Structures"], github: "https://github.com/alishah18105/LeetCode-Solutions", label: "Problem-solving repository", variant: "code" },
 ];
 

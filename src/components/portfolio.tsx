@@ -153,7 +153,7 @@ export function Skills() {
   return (
     <section className="section" id="skills">
       <div className="section-shell">
-        <SectionHeading eyebrow="Toolbox" title="Technical Skills" description="Technologies and tools I use to build, learn, and solve practical problems." />
+        <SectionHeading eyebrow="\n" title="Technical Skills" description="Technologies and tools I use to build, learn, and solve practical problems." />
         <div className="skills-grid">
           {skillGroups.map(({ title, icon: Icon, skills }, index) => (
             <article className="skill-card reveal" key={title}>
@@ -201,7 +201,7 @@ export function Projects() {
   return (
     <section className="section section-alt" id="projects">
       <div className="section-shell">
-        <SectionHeading eyebrow="Selected work" title="Featured Projects" description="A selection of academic, personal, and practical software projects." />
+        <SectionHeading eyebrow="\n" title="Featured Projects" description="A selection of academic, personal, and practical software projects." />
         <div className="featured-projects">{featuredProjects.map((project, index) => <ProjectCard key={project.title} project={project} index={index} featured />)}</div>
         <div className="project-divider"><span>More projects</span></div>
         <div className="other-projects">{otherProjects.map((project, index) => <ProjectCard key={project.title} project={project} index={index + 3} />)}</div>
