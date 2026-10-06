@@ -1,4 +1,4 @@
-# Syed Sultan Portfolio
+# Syed Ali Sultan Portfolio
 
 Build a complete, professional, modern personal portfolio website for me, **Syed Ali Sultan**, a Software Engineering undergraduate and aspiring Software Developer.
 
