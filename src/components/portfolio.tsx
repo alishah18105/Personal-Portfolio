@@ -1,8 +1,9 @@
-import { useEffect, useState, type FormEvent } from "react";
+import { useEffect, useState, type FormEvent, type ReactNode } from "react";
 import {
   ArrowDown,
   ArrowRight,
   ArrowUp,
+  BriefcaseBusiness,
   Check,
   Code2,
   Download,
@@ -37,7 +38,7 @@ const socialLinks = [
   { label: "Email", href: "mailto:alishah18105@gmail.com", icon: Mail },
 ];
 
-function ButtonLink({ href, children, variant = "primary", external = false, download = false }: { href: string; children: React.ReactNode; variant?: "primary" | "secondary" | "quiet"; external?: boolean; download?: boolean }) {
+function ButtonLink({ href, children, variant = "primary", external = false, download = false }: { href: string; children: ReactNode; variant?: "primary" | "secondary" | "quiet"; external?: boolean; download?: boolean }) {
   return (
     <a className={`button button-${variant}`} href={href} target={external ? "_blank" : undefined} rel={external ? "noreferrer" : undefined} download={download || undefined}>
       {children}

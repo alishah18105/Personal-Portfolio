@@ -1,24 +1,52 @@
 import { createFileRoute } from "@tanstack/react-router";
+import {
+  About,
+  Certifications,
+  Contact,
+  Education,
+  Experience,
+  Footer,
+  Hero,
+  LearningAndAchievements,
+  Navbar,
+  Projects,
+  RevealObserver,
+  Skills,
+} from "@/components/portfolio";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Syed Ali Sultan | Software Developer" },
+      { name: "description", content: "Portfolio of Syed Ali Sultan, a Software Engineering student and Software Developer focused on web and mobile applications, backend development, AI/ML, and data analysis." },
+      { property: "og:title", content: "Syed Ali Sultan | Software Developer" },
+      { property: "og:description", content: "Software Developer building web and mobile applications, exploring AI/ML, and turning ideas into software." },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "/" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [{ rel: "canonical", href: "/" }],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <>
+      <RevealObserver />
+      <Navbar />
+      <main>
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Experience />
+        <Education />
+        <Certifications />
+        <LearningAndAchievements />
+        <Contact />
+      </main>
+      <Footer />
+    </>
   );
 }
