@@ -277,6 +277,7 @@
   .project-actions .button-secondary svg { color: var(--accent-coral); }
   .project-actions .button-secondary:only-child { border-color: var(--primary); background: var(--primary); color: var(--primary-foreground); }
   .project-actions .button-secondary:only-child:hover { border-color: var(--accent-hover); background: var(--accent-hover); }
+  .project-actions .button-secondary:only-child svg { color: #ffffff; }
   .project-divider { display: flex; align-items: center; gap: 15px; margin: 54px 0 22px; color: var(--muted-foreground); font-family: var(--font-sans); font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
   .project-divider::after { content: ""; height: 1px; flex: 1; background: var(--border); }
   .project-compact .project-content h3 { font-size: 21px; }
