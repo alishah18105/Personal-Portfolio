@@ -5,7 +5,6 @@ import {
   ArrowUp,
   BriefcaseBusiness,
   Check,
-  Code2,
   Download,
   ExternalLink,
   Github,
@@ -13,7 +12,6 @@ import {
   Mail,
   Menu,
   Send,
-  Terminal,
   X,
 } from "lucide-react";
 import {
@@ -83,7 +81,7 @@ function SectionHeading({ eyebrow, title, description }: { eyebrow?: string; tit
   const label = eyebrow?.trim();
   return (
     <div className="section-heading reveal">
-      {label ? <p className="eyebrow"><span aria-hidden="true">{"// "}</span><span>{label}</span></p> : null}
+      {label ? <p className="eyebrow">{label}</p> : null}
       <h2>{title}</h2>
       {description && <p>{description}</p>}
     </div>
@@ -112,11 +110,10 @@ export function Hero() {
           </div>
         </div>
         <div className="portrait-stage reveal">
-          <div className="portrait-code" aria-hidden="true"><span>&lt;developer&gt;</span><span>build(ideas)</span><span>learn.continuously()</span></div>
           <div className="portrait-ring">
             <img src="/syed-ali-sultan-profile.png" alt="Syed Ali Sultan, Software Developer" width="768" height="768" fetchPriority="high" />
           </div>
-          <div className="portrait-badge"><Terminal size={16} /><span>Web · Mobile · AI/ML</span></div>
+          <div className="portrait-badge"><span>Web · Mobile · AI/ML</span></div>
         </div>
       </div>
       <a className="scroll-cue" href="#about" aria-label="Scroll to About"><span>Explore</span><ArrowDown size={16} /></a>
@@ -129,7 +126,7 @@ export function About() {
     <section className="section section-alt" id="about">
       <div className="section-shell about-grid">
         <div className="reveal">
-          <p className="eyebrow"><span aria-hidden="true">//</span> About me</p>
+          <p className="eyebrow">About me</p>
           <h2>Building software with curiosity and purpose.</h2>
           <div className="about-copy">
             <p>I&apos;m an undergraduate Software Engineering student at the University of Karachi with a strong interest in software development, web and mobile applications, and artificial intelligence.</p>
@@ -138,9 +135,9 @@ export function About() {
           </div>
         </div>
         <div className="capability-panel reveal" aria-label="Development capabilities">
-          <div className="panel-top"><span>capabilities.ts</span><span>01—06</span></div>
+          <div className="panel-top"><span>Development capabilities</span></div>
           <div className="capability-list">
-            {capabilities.map(({ title, icon: Icon }, index) => <div className="capability-item" key={title}><span className="capability-number">0{index + 1}</span><Icon size={20} /><strong>{title}</strong></div>)}
+            {capabilities.map(({ title, icon: Icon }) => <div className="capability-item" key={title}><Icon size={20} /><strong>{title}</strong></div>)}
           </div>
         </div>
       </div>
@@ -154,9 +151,9 @@ export function Skills() {
       <div className="section-shell">
         <SectionHeading title="Technical Skills" description="Technologies and tools I use to build, learn, and solve practical problems." />
         <div className="skills-grid">
-          {skillGroups.map(({ title, icon: Icon, skills }, index) => (
+          {skillGroups.map(({ title, icon: Icon, skills }) => (
             <article className="skill-card reveal" key={title}>
-              <div className="card-index">0{index + 1}</div><Icon className="card-icon" size={24} /><h3>{title}</h3>
+              <Icon className="card-icon" size={24} /><h3>{title}</h3>
               <div className="tag-list">{skills.map((skill) => <span key={skill}>{skill}</span>)}</div>
             </article>
           ))}
@@ -166,22 +163,17 @@ export function Skills() {
   );
 }
 
-function ProjectVisual({ project, index }: { project: Project; index: number }) {
+function ProjectVisual({ project }: { project: Project }) {
   return (
     <div className={`project-visual visual-${project.variant}`} aria-hidden="true">
-      <div className="visual-top"><span>PROJECT_{String(index + 1).padStart(2, "0")}</span><span>{project.label}</span></div>
-      {project.variant === "systems" ? <div className="server-map"><span /><i /><span /><i /><span /></div> : null}
-      {project.variant === "health" ? <div className="health-pulse"><span>AI</span><i /></div> : null}
-      {project.variant === "data" ? <div className="chart-bars">{[42, 68, 54, 82, 61, 75, 49].map((height, item) => <i key={item} style={{ height: `${height}%` }} />)}</div> : null}
-      {!(["systems", "health", "data"] as string[]).includes(project.variant) ? <Code2 size={48} /> : null}
     </div>
   );
 }
 
-function ProjectCard({ project, index, featured = false }: { project: Project; index: number; featured?: boolean }) {
+function ProjectCard({ project, featured = false }: { project: Project; featured?: boolean }) {
   return (
     <article className={`project-card reveal ${featured ? "project-featured" : "project-compact"}`}>
-      <ProjectVisual project={project} index={index} />
+      <ProjectVisual project={project} />
       <div className="project-content">
         <p className="project-label">{project.label}</p>
         <h3>{project.title}</h3>
@@ -201,9 +193,9 @@ export function Projects() {
     <section className="section section-alt" id="projects">
       <div className="section-shell">
         <SectionHeading title="Featured Projects" description="A selection of academic, personal, and practical software projects." />
-        <div className="featured-projects">{featuredProjects.map((project, index) => <ProjectCard key={project.title} project={project} index={index} featured />)}</div>
+        <div className="featured-projects">{featuredProjects.map((project) => <ProjectCard key={project.title} project={project} featured />)}</div>
         <div className="project-divider"><span>More projects</span></div>
-        <div className="other-projects">{otherProjects.map((project, index) => <ProjectCard key={project.title} project={project} index={index + 3} />)}</div>
+        <div className="other-projects">{otherProjects.map((project) => <ProjectCard key={project.title} project={project} />)}</div>
       </div>
     </section>
   );
@@ -214,13 +206,13 @@ export function Experience() {
     <section className="section" id="experience">
       <div className="section-shell experience-grid">
         <div className="reveal">
-          <p className="eyebrow"><span aria-hidden="true">//</span> Practical experience</p>
+          <p className="eyebrow">Practical experience</p>
           <h2>Software Development Projects</h2>
           <p className="lead">Developing practical software projects through academic work and independent learning across web, mobile, backend, AI/ML, and data analysis.</p>
-          <p className="context-note"><BriefcaseBusiness size={18} /> Project-based experience, not formal employment.</p>
+          <p className="context-note">Project-based experience, not formal employment.</p>
         </div>
         <ol className="experience-list reveal">
-          {experienceAreas.map((area, index) => <li key={area}><span>{String(index + 1).padStart(2, "0")}</span><strong>{area}</strong><Check size={18} /></li>)}
+          {experienceAreas.map((area) => <li key={area}><strong>{area}</strong></li>)}
         </ol>
       </div>
     </section>
@@ -233,7 +225,7 @@ export function Education() {
       <div className="section-shell">
         <SectionHeading eyebrow="Academic foundation" title="Education" />
         <article className="education-card reveal">
-          <div className="education-primary"><p>University of Karachi</p><h3>BS Software Engineering</h3><span>Undergraduate Software Engineering student.</span></div>
+          <div className="education-primary"><h3>BS Software Engineering</h3><p>University of Karachi</p><span>Undergraduate Software Engineering student.</span></div>
           <div className="education-areas"><p>Relevant Areas</p><div>{relevantAreas.map((area) => <span key={area}><Check size={15} />{area}</span>)}</div></div>
         </article>
       </div>
@@ -301,7 +293,7 @@ export function Contact() {
     <section className="section contact-section" id="contact">
       <div className="section-shell contact-grid">
         <div className="contact-copy reveal">
-          <p className="eyebrow"><span aria-hidden="true">//</span> Contact</p>
+          <p className="eyebrow">Contact</p>
           <h2>Let&apos;s build something together.</h2>
           <p>I&apos;m open to internships, freelance opportunities, and projects where I can contribute, learn, and build useful software.</p>
           <div className="contact-links">
@@ -312,7 +304,7 @@ export function Contact() {
           <ButtonLink href="/Syed-Ali-Sultan-Resume.pdf" variant="secondary" download="Syed-Ali-Sultan-Resume.pdf"><Download size={17} /> Download CV</ButtonLink>
         </div>
         <form className="contact-form reveal" onSubmit={submit} noValidate>
-          <div className="form-heading"><span>send_message.ts</span><span aria-hidden="true">● ● ●</span></div>
+          <div className="form-heading"><span>Send a message</span></div>
           <label htmlFor="name">Name</label>
           <input id="name" name="name" type="text" autoComplete="name" maxLength={100} aria-invalid={Boolean(errors.name)} aria-describedby={errors.name ? "name-error" : undefined} placeholder="Your name" />
           {errors.name && <p className="form-error" id="name-error">{errors.name}</p>}

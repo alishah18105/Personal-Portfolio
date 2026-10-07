@@ -99,13 +99,13 @@ export const otherProjects: Project[] = [
 ];
 
 export const experienceAreas = [
-  "Full-stack web development",
-  "REST API development",
-  "Database design",
-  "Mobile application development",
-  "AI/ML experimentation",
-  "Data analysis and visualization",
-  "Software testing and quality engineering",
+  "Full-Stack Web Development",
+  "REST API Development",
+  "Database Design",
+  "Mobile Application Development",
+  "AI/ML Experimentation",
+  "Data Analysis and Visualization",
+  "Software Testing and Quality Engineering",
 ];
 
 export const relevantAreas = [
