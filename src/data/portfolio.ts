@@ -120,10 +120,10 @@ export const relevantAreas = [
 ];
 
 export const certifications = [
-  { title: "Google AI Professional Certificate", provider: "Google / Coursera", description: "Practical applications of generative AI, AI-assisted productivity, and modern AI tools.", icon: Sparkles },
-  { title: "Networking Basics", provider: "Cisco Networking Academy", description: "Foundations of computer networking, network communication, devices, and networking technologies.", icon: Network },
-  { title: "Introduction to Python", provider: "DataCamp", description: "Python programming fundamentals including data types, control flow, functions, and practical programming.", icon: FileCode2 },
-  { title: "AI Fundamentals", provider: "Coursera", description: "Foundational concepts in artificial intelligence and its applications.", icon: BrainCircuit },
+  { title: "Google AI Professional Certificate", provider: "Google / Coursera", description: "Practical applications of generative AI, AI-assisted productivity, and modern AI tools.", url: "https://github.com/alishah18105/Certificates-and-Achievements/blob/main/Google%20AI%20Professional/Google%20AI%20Professional%20Certificate.pdf", icon: Sparkles },
+  { title: "Networking Basics", provider: "Cisco Networking Academy", description: "Foundations of computer networking, network communication, devices, and networking technologies.", url: "https://github.com/alishah18105/Certificates-and-Achievements/blob/main/Networking%20Basics/Networking_Basics_Certificate.pdf", icon: Network },
+  { title: "Introduction to Python", provider: "DataCamp", description: "Python programming fundamentals including data types, control flow, functions, and practical programming.", url: "https://github.com/alishah18105/Certificates-and-Achievements/blob/main/Introduction%20To%20Python/Introduction%20To%20Python%20Certificate.pdf", icon: FileCode2 },
+  { title: "AI Fundamentals", provider: "Coursera", description: "Foundational concepts in artificial intelligence and its applications.", url: "https://github.com/alishah18105/Certificates-and-Achievements/blob/main/Google%20AI%20Professional/AI%20Fundamentals.pdf", icon: BrainCircuit },
 ];
 
 export const learning: IconItem[] = [

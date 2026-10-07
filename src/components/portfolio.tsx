@@ -16,8 +16,6 @@ import {
   Terminal,
   X,
 } from "lucide-react";
-import profileAsset from "@/assets/syed-ali-sultan-profile.png.asset.json";
-import cvAsset from "@/assets/Syed_Ali_Sultan_CV.pdf.asset.json";
 import {
   achievements,
   capabilities,
@@ -38,7 +36,7 @@ const socialLinks = [
   { label: "Email", href: "mailto:alishah18105@gmail.com", icon: Mail },
 ];
 
-function ButtonLink({ href, children, variant = "primary", external = false, download = false }: { href: string; children: ReactNode; variant?: "primary" | "secondary" | "quiet"; external?: boolean; download?: boolean }) {
+function ButtonLink({ href, children, variant = "primary", external = false, download = false }: { href: string; children: ReactNode; variant?: "primary" | "secondary" | "quiet"; external?: boolean; download?: boolean | string }) {
   return (
     <a className={`button button-${variant}`} href={href} target={external ? "_blank" : undefined} rel={external ? "noreferrer" : undefined} download={download || undefined}>
       {children}
@@ -66,7 +64,7 @@ export function Navbar() {
         <div className="desktop-nav">
           {navigation.map((item) => <a key={item.href} href={item.href}>{item.label}</a>)}
         </div>
-        <a className="button button-primary nav-cv" href={cvAsset.url} download="Syed_Ali_Sultan_CV.pdf"><Download size={16} /> Download CV</a>
+        <a className="button button-primary nav-cv" href="/Syed-Ali-Sultan-Resume.pdf" download="Syed-Ali-Sultan-Resume.pdf"><Download size={16} /> Download CV</a>
         <button className="menu-button" type="button" aria-label={open ? "Close navigation menu" : "Open navigation menu"} aria-expanded={open} onClick={() => setOpen((value) => !value)}>
           {open ? <X /> : <Menu />}
         </button>
@@ -74,7 +72,7 @@ export function Navbar() {
       {open && (
         <div className="mobile-nav">
           {navigation.map((item) => <a key={item.href} href={item.href} onClick={() => setOpen(false)}>{item.label}</a>)}
-          <a className="button button-primary" href={cvAsset.url} download="Syed_Ali_Sultan_CV.pdf" onClick={() => setOpen(false)}><Download size={17} /> Download CV</a>
+          <a className="button button-primary" href="/Syed-Ali-Sultan-Resume.pdf" download="Syed-Ali-Sultan-Resume.pdf" onClick={() => setOpen(false)}><Download size={17} /> Download CV</a>
         </div>
       )}
     </header>
@@ -104,7 +102,7 @@ export function Hero() {
           <p className="hero-tagline">Building web and mobile applications, exploring AI, and turning ideas into software.</p>
           <div className="hero-actions">
             <ButtonLink href="#projects">View Projects <ArrowDown size={17} /></ButtonLink>
-            <ButtonLink href={cvAsset.url} variant="secondary" download><Download size={17} /> Download CV</ButtonLink>
+            <ButtonLink href="/Syed-Ali-Sultan-Resume.pdf" variant="secondary" download="Syed-Ali-Sultan-Resume.pdf"><Download size={17} /> Download CV</ButtonLink>
             <ButtonLink href="#contact" variant="quiet">Contact Me <ArrowRight size={17} /></ButtonLink>
           </div>
           <div className="social-row" aria-label="Social links">
@@ -116,7 +114,7 @@ export function Hero() {
         <div className="portrait-stage reveal">
           <div className="portrait-code" aria-hidden="true"><span>&lt;developer&gt;</span><span>build(ideas)</span><span>learn.continuously()</span></div>
           <div className="portrait-ring">
-            <img src={profileAsset.url} alt="Syed Ali Sultan, Software Developer" width="768" height="768" fetchPriority="high" />
+            <img src="/syed-ali-sultan-profile.png" alt="Syed Ali Sultan, Software Developer" width="768" height="768" fetchPriority="high" />
           </div>
           <div className="portrait-badge"><Terminal size={16} /><span>Web · Mobile · AI/ML</span></div>
         </div>
@@ -249,7 +247,15 @@ export function Certifications() {
       <div className="section-shell">
         <SectionHeading eyebrow="Continued learning" title="Certifications" />
         <div className="cert-grid">
-          {certifications.map(({ title, provider, description, icon: Icon }) => <article className="info-card reveal" key={title}><Icon size={24} /><p>{provider}</p><h3>{title}</h3><span>{description}</span></article>)}
+          {certifications.map(({ title, provider, description, url, icon: Icon }) => (
+            <article className="info-card reveal" key={title}>
+              <Icon size={24} />
+              <p>{provider}</p>
+              <h3>{title}</h3>
+              <span>{description}</span>
+              <a className="certificate-link" href={url} target="_blank" rel="noopener noreferrer">View Certificate →</a>
+            </article>
+          ))}
         </div>
       </div>
     </section>
@@ -303,7 +309,7 @@ export function Contact() {
             <a href="https://www.linkedin.com/in/syed-ali-sultan" target="_blank" rel="noreferrer"><Linkedin size={20} /><span><small>LinkedIn</small>syed-ali-sultan</span></a>
             <a href="https://github.com/alishah18105" target="_blank" rel="noreferrer"><Github size={20} /><span><small>GitHub</small>alishah18105</span></a>
           </div>
-          <ButtonLink href={cvAsset.url} variant="secondary" download><Download size={17} /> Download CV</ButtonLink>
+          <ButtonLink href="/Syed-Ali-Sultan-Resume.pdf" variant="secondary" download="Syed-Ali-Sultan-Resume.pdf"><Download size={17} /> Download CV</ButtonLink>
         </div>
         <form className="contact-form reveal" onSubmit={submit} noValidate>
           <div className="form-heading"><span>send_message.ts</span><span aria-hidden="true">● ● ●</span></div>

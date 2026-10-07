@@ -285,6 +285,9 @@
   .info-card p, .achievement-card p { margin: 24px 0 7px; color: var(--violet); font-family: var(--font-mono); font-size: 9px; text-transform: uppercase; }
   .info-card h3, .learning-card h3, .achievement-card h3 { margin: 0 0 13px; font-size: 17px; }
   .info-card span, .achievement-card span, .learning-card p { color: var(--muted-foreground); font-size: 12px; line-height: 1.65; }
+  .certificate-link { display: flex; width: fit-content; margin-top: 14px; color: var(--cyan); font-size: 12px; font-weight: 600; text-decoration: none; transition: color .2s ease; }
+  .certificate-link:hover { color: var(--foreground); text-decoration: underline; text-underline-offset: 3px; }
+  .certificate-link:focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; }
   .learning-card h3 { margin-top: 30px; }
   .achievement-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
   .achievement-card { grid-column: span 2; min-height: 200px; padding: 25px; }
