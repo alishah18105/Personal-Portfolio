@@ -164,6 +164,14 @@ export function Skills() {
 }
 
 function ProjectVisual({ project }: { project: Project }) {
+  if (project.image) {
+    return (
+      <div className={`project-visual visual-${project.variant}`}>
+        <img src={project.image} alt={`${project.title} project preview`} />
+      </div>
+    );
+  }
+
   return (
     <div className={`project-visual visual-${project.variant}`} aria-hidden="true">
     </div>

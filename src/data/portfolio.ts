@@ -55,6 +55,7 @@ export const skillGroups = [
 export type Project = {
   title: string;
   description: string;
+  image?: string;
   technologies: string[];
   github: string;
   live?: string;
@@ -66,6 +67,7 @@ export const featuredProjects: Project[] = [
   {
     title: "Cloud Load Balancing Simulator",
     description: "A web-based cloud load balancing simulator that demonstrates how incoming requests can be distributed across multiple servers. The application provides an interactive interface for monitoring server loads and understanding load balancing behavior.",
+    image: "/Cloud_Loud_Balncing_Simulator.png",
     technologies: ["Flask", "React", "Vite", "Tailwind CSS", "Recharts"],
     github: "https://github.com/alishah18105/Cloud-Load-Balancing-Simulator",
     live: "https://cloud-load-balancing-simulator.vercel.app/",
@@ -75,6 +77,7 @@ export const featuredProjects: Project[] = [
   {
     title: "AI Healthcare Assistant",
     description: "A desktop-based healthcare assistant combining a machine-learning chatbot, CBC report analysis, and database-backed functionality.",
+    image: "/AI_Health_Care_Assitant.png",
     technologies: ["Python", "PyQt6", "Flask", "PostgreSQL", "Machine Learning", "TF-IDF", "Logistic Regression"],
     github: "https://github.com/alishah18105/AI_Health_System_Project",
     label: "AI/ML",
@@ -83,6 +86,7 @@ export const featuredProjects: Project[] = [
   {
     title: "Manufacturing SPC Analysis",
     description: "A statistical process control project analyzing manufacturing measurements to evaluate process stability and process capability.",
+    image: "/Manufacturing_SPC_Analyis.png",
     technologies: ["Python", "Pandas", "NumPy", "Matplotlib", "X-bar Charts", "R Charts", "Cp/Cpk Analysis", "Western Electric Rules"],
     github: "https://github.com/alishah18105/Manufacturing-SPC-Analysis",
     label: "SOFTWARE QUALITY & TESTING",

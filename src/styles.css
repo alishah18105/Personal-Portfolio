@@ -263,8 +263,8 @@
   .project-card:hover { border-color: color-mix(in srgb, var(--accent-coral) 44%, var(--border)); transform: translateY(-3px); box-shadow: 0 14px 30px rgb(0 0 0 / 16%); }
   .project-featured:first-child { grid-column: auto; display: flex; flex-direction: column; background: var(--card); }
   .project-visual { position: relative; width: 100%; min-width: 0; min-height: 0; flex: none; aspect-ratio: 16 / 9; display: grid; place-items: center; overflow: hidden; color: var(--muted-foreground); background: linear-gradient(145deg, var(--surface), color-mix(in srgb, var(--plum-surface) 12%, var(--surface))); }
-  .project-visual img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .3s ease, filter .3s ease; }
-  .project-card:hover .project-visual img { transform: scale(1.025); filter: brightness(.96); }
+  .project-visual img { display: block; width: 100%; height: 100%; object-fit: contain; transition: filter .3s ease; }
+  .project-card:hover .project-visual img { filter: brightness(.96); }
   .project-content { min-width: 0; display: flex; flex: 1; flex-direction: column; padding: 26px; }
   .project-content h3 { order: 0; margin: 0 0 7px; font-size: 23px; line-height: 1.25; }
   .project-label { order: 1; margin: 0 0 13px; color: var(--muted-foreground); font-family: var(--font-sans); font-size: 10px; font-weight: 650; letter-spacing: .055em; text-transform: uppercase; }
