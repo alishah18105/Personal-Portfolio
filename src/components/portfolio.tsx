@@ -28,10 +28,19 @@ import {
   type Project,
 } from "@/data/portfolio";
 
+const contactEmail = "alishah18105@gmail.com";
+
+function gmailComposeUrl({ subject, body }: { subject?: string; body?: string } = {}) {
+  const params = new URLSearchParams({ view: "cm", fs: "1", to: contactEmail });
+  if (subject !== undefined) params.set("su", subject);
+  if (body !== undefined) params.set("body", body);
+  return `https://mail.google.com/mail/?${params.toString()}`;
+}
+
 const socialLinks = [
   { label: "GitHub", href: "https://github.com/alishah18105", icon: Github },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/syed-ali-sultan", icon: Linkedin },
-  { label: "Email", href: "mailto:alishah18105@gmail.com", icon: Mail },
+  { label: "Email", href: gmailComposeUrl(), icon: Mail },
 ];
 
 function ButtonLink({ href, children, variant = "primary", external = false, download = false }: { href: string; children: ReactNode; variant?: "primary" | "secondary" | "quiet"; external?: boolean; download?: boolean | string }) {
@@ -287,14 +296,17 @@ export function Contact() {
     const email = String(form.get("email") ?? "").trim();
     const message = String(form.get("message") ?? "").trim();
     const nextErrors: FormErrors = {};
-    if (name.length < 2) nextErrors.name = "Please enter your name.";
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) nextErrors.email = "Please enter a valid email address.";
-    if (message.length < 10) nextErrors.message = "Please enter at least 10 characters.";
+    if (!name) nextErrors.name = "Please enter your name.";
+    if (!email) nextErrors.email = "Please enter your email address.";
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) nextErrors.email = "Please enter a valid email address.";
+    if (!message) nextErrors.message = "Please enter your message.";
     setErrors(nextErrors);
     if (Object.keys(nextErrors).length > 0) return;
-    const subject = encodeURIComponent(`Portfolio enquiry from ${name}`);
-    const body = encodeURIComponent(`${message}\n\nFrom: ${name}\nEmail: ${email}`);
-    window.location.href = `mailto:alishah18105@gmail.com?subject=${subject}&body=${body}`;
+    const url = gmailComposeUrl({
+      subject: `Portfolio Contact from ${name}`,
+      body: `Name: ${name}\n\nEmail: ${email}\n\nMessage:\n${message}`,
+    });
+    window.open(url, "_blank", "noopener,noreferrer");
   }
 
   return (
@@ -305,7 +317,7 @@ export function Contact() {
           <h2>Let&apos;s build something together.</h2>
           <p>I&apos;m open to internships, freelance opportunities, and projects where I can contribute, learn, and build useful software.</p>
           <div className="contact-links">
-            <a href="mailto:alishah18105@gmail.com"><Mail size={20} /><span><small>Email</small>alishah18105@gmail.com</span></a>
+            <a href={gmailComposeUrl()} target="_blank" rel="noreferrer"><Mail size={20} /><span><small>Email</small>{contactEmail}</span></a>
             <a href="https://www.linkedin.com/in/syed-ali-sultan" target="_blank" rel="noreferrer"><Linkedin size={20} /><span><small>LinkedIn</small>syed-ali-sultan</span></a>
             <a href="https://github.com/alishah18105" target="_blank" rel="noreferrer"><Github size={20} /><span><small>GitHub</small>alishah18105</span></a>
           </div>
@@ -323,7 +335,7 @@ export function Contact() {
           <textarea id="message" name="message" rows={5} maxLength={1200} aria-invalid={Boolean(errors.message)} aria-describedby={errors.message ? "message-error" : undefined} placeholder="Tell me about the opportunity or project..." />
           {errors.message && <p className="form-error" id="message-error">{errors.message}</p>}
           <button className="button button-primary submit-button" type="submit">Open email draft <Send size={17} /></button>
-          <p className="form-note">This opens your email app with the message prefilled. Nothing is sent automatically.</p>
+          <p className="form-note">This opens a Gmail draft with the message prefilled. Nothing is sent automatically.</p>
         </form>
       </div>
     </section>
