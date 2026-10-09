@@ -105,7 +105,7 @@ export function Hero() {
           <p className="status"><span className="status-dot" aria-hidden="true" /> Open to internships &amp; freelance opportunities</p>
           <p className="hero-kicker">Hi, I&apos;m Syed Ali Sultan</p>
           <h1 id="hero-title">Software <span>Developer.</span></h1>
-          <p className="hero-support">Web &amp; Mobile Applications <i>/</i> AI/ML Enthusiast</p>
+          <p className="hero-support">Web &amp; Mobile Application | AI/ML Enthusiast</p>
           <p className="hero-tagline">Building web and mobile applications, exploring AI, and turning ideas into software.</p>
           <div className="hero-actions">
             <ButtonLink href="#projects">View Projects <ArrowDown size={17} /></ButtonLink>
@@ -122,7 +122,6 @@ export function Hero() {
           <div className="portrait-ring">
             <img src="/syed-ali-sultan-profile.png" alt="Syed Ali Sultan, Software Developer" width="768" height="768" fetchPriority="high" />
           </div>
-          <div className="portrait-badge"><span>Web · Mobile · AI/ML</span></div>
         </div>
       </div>
       <a className="scroll-cue" href="#about" aria-label="Scroll to About"><span>Explore</span><ArrowDown size={16} /></a>
