@@ -61,11 +61,11 @@ Selected learning and certification areas include Google AI Professional Certifi
 You'll need **Node.js** and **npm** installed.
 
 ```bash
-# Clone this repository (replace the URL with this repository's clone URL)
-git clone <repository-url>
+# Clone this repository
+git clone https://github.com/alishah18105/Personal-Portfolio.git
 
 # Open the project folder
-cd <repository-folder>
+cd Personal-Portfolio
 
 # Install dependencies
 npm install
